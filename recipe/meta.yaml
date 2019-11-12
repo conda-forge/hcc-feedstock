@@ -48,8 +48,6 @@ requirements:
 test:
   requires:
     - {{ compiler('cxx') }}
-    - {{ cdt('numactl-devel') }}
-    - {{ cdt('pciutils-devel') }}
   files:
     - saxpy.cpp
   commands:
