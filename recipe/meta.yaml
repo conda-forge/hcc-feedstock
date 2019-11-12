@@ -38,6 +38,7 @@ requirements:
     - {{ pin_compatible("roct-thunk-interface", max_pin="x.x") }}
     - {{ pin_compatible("rocm-device-libs", max_pin="x.x") }}
     - {{ pin_compatible("clang", max_pin="x.x.x") }}
+    - rocminfo
     - clangxx * hcc*
     - clang-tools
     - llvmdev
