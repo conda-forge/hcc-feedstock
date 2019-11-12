@@ -54,7 +54,7 @@ test:
     - $PREFIX/bin/hcc --version
     - $PREFIX/bin/hcc-config --help
     - export CONDA_BUILD_SYSROOT=$PREFIX/$HOST/sysroot
-    - hcc `hcc-config --cxxflags --ldflags` saxpy.cpp
+    - hcc `hcc-config --cxxflags --ldflags` --amdgpu-target=gfx803 saxpy.cpp
 
 about:
   home: https://github.com/RadeonOpenCompute/hcc
