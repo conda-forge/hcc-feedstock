@@ -12,7 +12,7 @@ source:
     - unbundle_dependencies.diff
 
 build:
-  number: 0
+  number: 1
   skip: True  # [not linux]
   merge_build_host: True
 
@@ -38,6 +38,7 @@ requirements:
     - {{ pin_compatible("roct-thunk-interface", max_pin="x.x") }}
     - {{ pin_compatible("rocm-device-libs", max_pin="x.x") }}
     - {{ pin_compatible("clang", max_pin="x.x.x") }}
+    - rocminfo
     - clangxx * hcc*
     - clang-tools
     - llvmdev
@@ -55,7 +56,7 @@ test:
     - $PREFIX/bin/hcc --version
     - $PREFIX/bin/hcc-config --help
     - export CONDA_BUILD_SYSROOT=$PREFIX/$HOST/sysroot
-    - hcc `hcc-config --cxxflags --ldflags` saxpy.cpp
+    - hcc `hcc-config --cxxflags --ldflags` --amdgpu-target=gfx803 saxpy.cpp
 
 about:
   home: https://github.com/RadeonOpenCompute/hcc

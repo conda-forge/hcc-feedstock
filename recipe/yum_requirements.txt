@@ -1,0 +1,2 @@
+numactl
+pciutils-libs

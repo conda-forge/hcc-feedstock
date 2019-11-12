@@ -23,8 +23,9 @@ cmake \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_LIBDIR=lib \
   -DHCC_INTEGRATE_ROCDL=no \
-  -DHSA_AMDGPU_GPU_TARGET="gfx700;gfx701;gfx702;gfx801;gfx802;gfx803;gfx900;gfx902;gfx904;gfx906;gfx908;gfx1010;gfx1011;gfx1012" \
   ..
+
+  # -DHSA_AMDGPU_GPU_TARGET="gfx700;gfx701;gfx702;gfx801;gfx802;gfx803;gfx900;gfx902;gfx904;gfx906;gfx908;gfx1010;gfx1011;gfx1012" \
 
 cp compiler/bin/* $PREFIX/bin/
 
