@@ -1,5 +1,5 @@
 {% set name = "hcc" %}
-{% set version = "2.7.2" %}
+{% set version = "2.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/RadeonOpenCompute/hcc/archive/roc-hcc-{{ version }}.tar.gz
-  sha256: 335be7fb125bdc3c6ee2367f584b7a82f312a9ed4723361df101036fdc9fde22
+  sha256: 7c23d787c20ae52a360cd4cfc7ef1406fd2453a6a46d319517e6132a148c6f55
   patches:
     - unbundle_dependencies.diff
 
 build:
-  number: 1
+  number: 0
   skip: True  # [not linux]
   merge_build_host: True
 
