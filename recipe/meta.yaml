@@ -12,16 +12,14 @@ source:
     - unbundle_dependencies.diff
 
 build:
-  number: 1
-  skip: True  # [not linux]
-  merge_build_host: True
+  number: 2
+  skip: true  # [not linux]
+  merge_build_host: true
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - {{ cdt('numactl-devel') }}
-    - {{ cdt('pciutils-devel') }}
     - cmake
     - make
   host:
@@ -33,6 +31,7 @@ requirements:
     - llvmdev
     - lld
     - compiler-rt
+    - libnuma                   None
   run:
     - {{ pin_compatible("rocr-runtime", max_pin="x.x") }}
     - {{ pin_compatible("roct-thunk-interface", max_pin="x.x") }}
@@ -48,8 +47,7 @@ requirements:
 test:
   requires:
     - {{ compiler('cxx') }}
-    - {{ cdt('numactl-devel') }}
-    - {{ cdt('pciutils-devel') }}
+    - libnuma                   None
   files:
     - saxpy.cpp
   commands:
